@@ -1,4 +1,9 @@
-import random # to fil in the random values in tree
+# BST implementation
+# Covers --
+# Instertion, Traversal(reorder change the type), Searching
+## Needs code imprvement in insertion(few redundant lines)
+
+import random # to fill in the random values in tree
 
 class Node:
 	def __init__(self,data = None,parent = None,left = None,right=None):
