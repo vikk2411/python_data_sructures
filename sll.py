@@ -59,12 +59,7 @@ class LinkedList():
 						count += 1
 						node = node.next	
 				new_node.insert_bw(node, node.next)
-				self.pprint()		
-
-				
-				
-
-
+				self.pprint()
 
 
 
