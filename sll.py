@@ -1,6 +1,6 @@
 # singly linked list implementation
 # Covers --
-## Inserstion(start, end, after position), traveral
+## Inserstion(start, end, after position), Deletion(start, end, position), Traversal
 
 class Node():
 	def __init__(self, data, next=None):
@@ -19,10 +19,14 @@ class Node():
 
 
 class LinkedList():
-	def __init__(self, head = None):     #head points to the first node
+	def __init__(self, head = None, total_nodes = 0):     #head points to the first node
 		self.head = head
+		self.total_nodes = total_nodes
+
+### Insertion Methods Start ###
 
 	def insert_start(self, value):
+		self.total_nodes += 1
 		n = Node(value)
 		n.set_next(self.head)
 		self.head = n
@@ -34,12 +38,14 @@ class LinkedList():
 		if node == None:
 			self.insert_start(value)
 		else:
+			self.total_nodes += 1
 			while node.next!=None:
 				node = node.next
 			node.set_next(new_node)
 			self.pprint()
 
 	def insert_after_position(self,value,position=None):  # insert after a position in list, 1  being first node
+		self.total_nodes += 1
 		if position==None:
 			self.insert_end(value)
 		else:
@@ -61,9 +67,57 @@ class LinkedList():
 				new_node.insert_bw(node, node.next)
 				self.pprint()
 
+### Insertion Methods End ###
+
+### Deletion Methods Start ###
+	
+
+	def delete_first(self):
+		tmp_node = self.head
+		self.head = self.head.next            # could have use the node method as well
+		self.delete_node(tmp_node)
+
+	def delete_last(self):
+		node = self.head
+		if node== None:
+			"No items in the list"
+		else:
+			while node.next!=None:     		  # Moving 1 step ahead to ge the next node first
+				second_last_node = node
+				node = node.next
+			second_last_node.next = None	
+			self.delete_node(node)
+
+	def delete_at(self, position):
+		node = self.head
+		count = 1
+		if node == None:
+			print "List is Empty"
+		else:
+			if position == count:
+				self.delete_first()
+			else:	
+				while count != position:
+					if node == None:
+						print "Invalid poistion"
+					previous = node
+					node = node.next
+					count += 1
+				previous.next = node.next
+				self.delete_node(node)		
+
+	def delete_node(self,node):               # Generic Method to remove the node from the memory
+		self.total_nodes += -1
+		print "Deleting the element with data : " + str(node.data)
+		del node
+		self.pprint()		
+			
+
+### Deletion Methods End ###
 
 
 	def pprint(self):
+		print "total nodes = " + str(self.total_nodes)
 		node = self.head
 		if node == None:
 			print "Nothing in the list"
@@ -76,3 +130,8 @@ class LinkedList():
 
 n=Node(23)
 n.pprint()		
+
+s=LinkedList()
+s.insert_end(21)
+s.insert_end(24)
+s.insert_end(25)
