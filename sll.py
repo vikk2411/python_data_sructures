@@ -117,6 +117,23 @@ class LinkedList():
 ### Deletion Methods End ###
 
 
+	def has_value(self,value):
+		node = self.head
+		count = 1
+		if node == None:
+			print "List is currently empty"
+		else:	
+			while node.data != value:
+				if node.next == None:
+					print "Given Item not in the list"
+					return
+				node.pprint
+				count += 1
+				node = node.next
+			print "Item found at " + str(count) + " position"	
+
+
+
 	def pprint(self):
 		print "total nodes = " + str(self.total_nodes)
 		node = self.head
