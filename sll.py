@@ -58,12 +58,12 @@ class LinkedList():
 				print "Less than 1 means nothing Mate!"
 			else:
 				while count != position:
+					node = node.next	
 					if node == None:
 						print "Invalid position given"
 						return
 					else:	
 						count += 1
-						node = node.next	
 				new_node.insert_bw(node, node.next)
 				self.pprint()
 
