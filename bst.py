@@ -103,7 +103,7 @@ class BST():
 			node.set_left(new_node)
 			node.print_as_tree()
 			new_node.print_as_tree()
-			return new_node
+			# return new_node
 		else:
 			self.insert(value, node.left)
 
@@ -113,7 +113,7 @@ class BST():
 			node.set_right(new_node)
 			node.print_as_tree()
 			new_node.print_as_tree()
-			return new_node
+			# return new_node
 		else:
 			self.insert(value, node.right)				
 
