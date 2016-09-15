@@ -1,6 +1,6 @@
 # singly linked list implementation
 # Covers --
-## Inserstion(start, end, after position), Deletion(start, end, position), Traversal
+## Inserstion(start, end, after position), Deletion(start, end, position), Traversal, Search
 
 class Node():
 	def __init__(self, data, next=None):
@@ -10,11 +10,11 @@ class Node():
 	def set_next(self,node= None):
 		self.next = node
 	
-	def insert_bw(self, node1, node2=None):
+	def insert_bw(self, node1, node2=None):   #can be used to insert between 2 nodes
 		node1.next = self
 		self.next = node2		
 
-	def pprint(self):
+	def pprint(self):						  # print the node, can be useful for printing whole list	
 		print str(self.data) + "--->",
 
 
@@ -58,7 +58,7 @@ class LinkedList():
 				print "Less than 1 means nothing Mate!"
 			else:
 				while count != position:
-					node = node.next	
+					node = node.next					#check the next node first, earlier I checked it in else part
 					if node == None:
 						print "Invalid position given"
 						return
@@ -116,7 +116,7 @@ class LinkedList():
 
 ### Deletion Methods End ###
 
-
+## Use the below method to find the presence of a value in the list
 	def has_value(self,value):
 		node = self.head
 		count = 1
@@ -132,8 +132,7 @@ class LinkedList():
 				node = node.next
 			print "Item found at " + str(count) + " position"	
 
-
-
+# print all the nodes in order with total nodes count
 	def pprint(self):
 		print "total nodes = " + str(self.total_nodes)
 		node = self.head
