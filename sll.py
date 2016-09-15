@@ -45,10 +45,10 @@ class LinkedList():
 			self.pprint()
 
 	def insert_after_position(self,value,position=None):  # insert after a position in list, 1  being first node
-		self.total_nodes += 1
 		if position==None:
 			self.insert_end(value)
 		else:
+			self.total_nodes += 1
 			count = 1
 			node = self.head
 			new_node = Node(value)
@@ -59,8 +59,8 @@ class LinkedList():
 			else:
 				while count != position:
 					if node == None:
-						print "Invalid position give"
-						break
+						print "Invalid position given"
+						return
 					else:	
 						count += 1
 						node = node.next	
@@ -100,6 +100,7 @@ class LinkedList():
 				while count != position:
 					if node == None:
 						print "Invalid poistion"
+						return
 					previous = node
 					node = node.next
 					count += 1
