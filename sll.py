@@ -127,7 +127,7 @@ class LinkedList():
 				if node.next == None:
 					print "Given Item not in the list"
 					return
-				node.pprint
+				node.pprint()
 				count += 1
 				node = node.next
 			print "Item found at " + str(count) + " position"	
@@ -152,3 +152,7 @@ s=LinkedList()
 s.insert_end(21)
 s.insert_end(24)
 s.insert_end(25)
+
+## TODOs-
+# Reverse the linked list
+# Insert at a position from end in O(n) complexity
