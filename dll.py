@@ -127,6 +127,7 @@ class DoublyLinkedList(object):
 			print "Deleting the element with data : " + str(node.data)
 			del node
 			self.pprint()
+
 ### Deletion Methods End
 
 ### Search
@@ -171,8 +172,10 @@ class DoublyLinkedList(object):
 			while node != None:
 				node.pprint()
 				node = node.prev
-			print "Head"			
+			print "Head"
 
+
+## Populate the list with random data
 d= DoublyLinkedList()
 d.insert_start(21)
 d.insert_start(29)						
