@@ -1,5 +1,7 @@
 ## Stack Implementation using Arrays
 # We know arrays as Lists in python, but we will use Array word only. Dont confuse.
+### Covers - 
+## Insert, Delete, Display
 
 class Stack(object):
 	"""docstring for Stack"""
@@ -54,3 +56,47 @@ class Stack(object):
 			print "================================"
 
 
+
+ ## Sample Implementation
+
+# >>> s=Stack(3,[31,32,89])
+# -------------> Top <------------
+# |              ^89             |
+# |              ^32             |
+# |              ^31             |
+# ================================
+# >>> 
+
+# ................. Removing Some mid Part
+
+# >>> s.pop()
+# Removing the item 31
+# -------------> Top <------------
+# ================================
+# >>> s.pop()
+# Stack Underflow
+# >>> 
+# >>> 
+# >>> s.pop()
+# Stack Underflow
+# >>> 
+# >>> 
+# >>> s.push(21)
+# -------------> Top <------------
+# |              ^21             |
+# ================================
+# >>> s.push(24)
+# -------------> Top <------------
+# |              ^24             |
+# |              ^21             |
+# ================================
+# >>> s.push(29)
+# -------------> Top <------------
+# |              ^29             |
+# |              ^24             |
+# |              ^21             |
+# ================================
+# >>> s.push(32)
+# Stack Overflow
+
+# Stack Overflow
