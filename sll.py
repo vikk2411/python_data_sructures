@@ -125,12 +125,12 @@ class LinkedList():
 		else:	
 			while node.data != value:
 				if node.next == None:
-					print "Given Item not in the list"
+					print "\nGiven Item not in the list"
 					return
 				node.pprint()
 				count += 1
 				node = node.next
-			print "Item found at " + str(count) + " position"	
+			print "\nItem found at " + str(count) + " position"	
 
 # print all the nodes in order with total nodes count
 	def pprint(self):
